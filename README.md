@@ -8,13 +8,18 @@ Enjoy it!
 
 Directory:
 -
-    - importer_files
-        - Importer.php
-    - dataexporter
-    example-users.json
+
+:open_file_folder: SQLGeneratorFromJson
+- README.md
+- dataexporter
+- exampleusers.json
+   
+    :open_file_folder: importer_files
+    - Importer.php
+
 
 Go through the Linux terminal and type:
-
+```terminal
     $ php importdata example-users.json
-
+```
 A file named example-users.txt will be create in the same directory where the *json file it is.
