@@ -1,0 +1,22 @@
+<?php
+
+require_once ('importer_files/Importer.php');
+
+// if (!isset($argv[1])) {
+//     die(" \n ** ERROR: Please, enter with an acceptable parameter: Eg. php importdata FileName.json \n ");
+// }file_get_contents(users)
+if (@file_get_contents($argv[1]) == false) {
+    die(" \n **  ERROR: Please, enter with a valid parameter: E.g. php importdata FileName.json \n \n");
+}
+$json_file = file_get_contents($argv[1]);
+$jsonArray = json_decode($json_file, true);
+
+// Gettting key names dinamically
+$nameColumns = array_keys($jsonArray[0]);
+$fields = implode("," , $nameColumns);
+
+// Getting the table name where the iserts will be created for
+$table = str_replace(".json", "", $argv[1]);
+
+$import = new Importer();
+$obj = $import->sqlGen($jsonArray, $fields, $table) ;
