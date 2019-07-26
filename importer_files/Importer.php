@@ -17,7 +17,7 @@ class Importer
                 }
             }
             $fieldvalue = implode(",", $fieldvalue);
-            $insertLine = "INSERT INTO " . $table . " ($fields)" . " VALUES ". "($fieldvalue)" . "\n";
+            $insertLine = "INSERT INTO " . $table . " ($fields)" . " VALUES ". "($fieldvalue);" . "\n";
 
             fwrite($handle, $insertLine);
         }
