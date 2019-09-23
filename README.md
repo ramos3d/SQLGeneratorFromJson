@@ -18,7 +18,7 @@ Directory:
     - Importer.php
 
 
-Go through the Linux terminal and type:
+Start the Linux terminal and type:
 ```terminal
     $ php importdata example-users.json
 ```
